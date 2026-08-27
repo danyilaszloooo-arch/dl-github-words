@@ -1,0 +1,15 @@
+@reference '../../../styles.css';
+.input-container {
+    @apply w-full flex flex-row justify-start items-center gap-6 py-2;
+}
+button {
+    @apply w-fit h-9 px-2 bg-yellow-500 text-white rounded-md cursor-pointer;
+    transition: .25s;
+}
+button:hover {
+    @apply bg-yellow-400;
+}
+button:active {
+    @apply bg-yellow-600;
+    transition: 0s;
+}
