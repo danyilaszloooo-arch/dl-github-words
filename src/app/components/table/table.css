@@ -1,0 +1,10 @@
+@reference '../../../styles.css';
+table {
+    @apply w-full;
+}
+tr {
+    @apply w-full h-9;
+}
+td {
+    @apply text-center border-2 border-gray-400;
+}
