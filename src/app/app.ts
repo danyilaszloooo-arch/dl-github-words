@@ -1,10 +1,11 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Table } from './components/table/table';
+import { Input } from './components/input/input';
 
 @Component({
   selector: 'app-root',
-  imports: [Table],
+  imports: [Table, Input],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
