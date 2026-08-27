@@ -8,3 +8,9 @@ tr {
 td {
     @apply text-center border-2 border-gray-400;
 }
+.red {
+    @apply text-red-500;
+}
+.blue{
+    @apply text-blue-500;
+}

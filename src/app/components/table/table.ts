@@ -1,10 +1,11 @@
 import { Component, computed, inject, signal } from '@angular/core';
 import { Api } from '../../services/api';
 import { WordService } from '../../services/word-service';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-table',
-  imports: [],
+  imports: [NgClass],
   templateUrl: './table.html',
   styleUrl: './table.css',
 })

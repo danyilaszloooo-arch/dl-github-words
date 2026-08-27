@@ -3,7 +3,7 @@
         @for (chunk of chunks(); track chunk) {
             <tr>
                 @for (word of chunk; track word) {
-                    <td>{{ word }}</td>
+                    <td [ngClass]="addColor(this.words(), word)">{{ word }}</td>
                 }
             </tr>
         }
