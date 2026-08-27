@@ -1,5 +1,6 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
 import { Api } from '../../services/api';
+import { WordService } from '../../services/word-service';
 
 @Component({
   selector: 'app-table',
@@ -9,8 +10,9 @@ import { Api } from '../../services/api';
 })
 export class Table {
   apiService = inject(Api)
-  words = signal<string[]>([])
-  chunks = signal<string[][]>([])
+  wordService = inject(WordService)
+  words = this.wordService.words
+  chunks = computed(() => this.chunkArray(this.words(), this.cellsInRow))
   cellsInRow: number = 4
   rows: number = 1
 
@@ -20,7 +22,6 @@ export class Table {
     let spare = this.words().length % 4
     if (spare > 1) spare = 1
     this.rows = Math.floor(this.words().length / 4) + spare
-    this.chunks.set(this.chunkArray(this.words(), this.cellsInRow))
   }
   private chunkArray<T>(array: T[], chunkSize: number): T[][] {
     let chunks: T[][] = []

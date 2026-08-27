@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { WordService } from '../../services/word-service';
 
 @Component({
   selector: 'app-input',
@@ -8,8 +9,17 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './input.css',
 })
 export class Input {
+  wordService = inject(WordService)
+  words = this.wordService.words
   newWord: string = ''
-  protected press() {
-    console.log(this.newWord)
+  protected addWord(word: string) {
+    if (
+      word.trim().length !== 0 &&
+      word.length !== 0
+    )
+    {
+      this.words.update(current => [...current, word])
+      this.newWord = ''
+    }
   }
 }
