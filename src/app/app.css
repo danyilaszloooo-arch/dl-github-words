@@ -1,0 +1,10 @@
+@reference '../styles.css';
+.header {
+    @apply w-full h-fit px-24 py-6 bg-gray-300;
+}
+.main {
+    @apply bg-gray-200 w-full h-screen py-3 px-12;
+}
+.title {
+    @apply text-3xl font-bold;
+}
