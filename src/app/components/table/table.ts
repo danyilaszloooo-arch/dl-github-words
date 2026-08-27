@@ -30,4 +30,21 @@ export class Table {
     }
     return chunks
   }
+  protected addColor(array: string[], word: string): string {
+    let longestWordLength = 0
+    for (let i = 0; i < array.length; i++) {
+      if (array[i].length > longestWordLength) {
+        longestWordLength = array[i].length
+      }
+    }
+    if (word.length < 5) {
+      console.log('blue')
+      return 'blue'
+    } else if (word.length === longestWordLength ||
+      word.length + 1 === longestWordLength ||
+      word.length + 2 === longestWordLength) {
+        console.log('red')
+        return 'red'
+    } else return ''
+  }
 }
