@@ -1,8 +1,11 @@
 <table>
     <tbody>
-        <tr>
-            <td>test</td>
-            <td>test</td>
-        </tr>
+        @for (chunk of chunks(); track chunk) {
+            <tr>
+                @for (word of chunk; track word) {
+                    <td>{{ word }}</td>
+                }
+            </tr>
+        }
     </tbody>
 </table>
